@@ -11,7 +11,7 @@ To use this on your website, add these lines to your HTML:
 <script src="https://wxn0brp.github.io/paper/dist/load.js"></script>
 ```
 
-## Settings
+## Internal Settings
 
 You can set the following settings by adding them to the URL as query parameters:
 
@@ -30,6 +30,26 @@ You can set the following settings by adding them to the URL as query parameters
 ```html
 <script src="https://wxn0brp.github.io/paper/dist/load.js?bg-body=black&txt-primary=white&accent=blue&accent-hover=green"></script>
 ```
+
+## Popup Settings
+
+:root {
+    --small-paper-iframe-right: 10px;
+    --small-paper-iframe-bottom: 60px;
+    --small-paper-iframe-width: 300px;
+    --small-paper-iframe-height: 600px;
+    --small-paper-iframe-radius: 8px;
+    --small-paper-iframe-z: 999;
+    --small-paper-button-right: 10px;
+    --small-paper-button-bottom: 10px;
+    --small-paper-button-size: 2rem;
+    --small-paper-button-size: 2rem;
+    --small-paper-button-radius: 50%;
+    --small-paper-button-bg: #2c2c2c;
+    --small-paper-button-txt: #ededed;
+    --small-paper-button-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    --small-paper-button-z: 1000;
+}
 
 ## Features
 
