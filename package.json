@@ -1,0 +1,20 @@
+{
+	"name": "paper",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wxn0brP/paper.git"
+	},
+	"homepage": "https://github.com/wxn0brP/paper",
+	"author": "wxn0brP",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "bun build src/index.ts src/load.ts --minify --sourcemap --outdir dist"
+	},
+	"devDependencies": {
+		"typescript": "*"
+	}
+}
