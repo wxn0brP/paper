@@ -73,7 +73,7 @@ function renderNews(news: Post[], viewedNews: string[]) {
         <h2 class="news-title">${_new.title}</h2>
         <div class="news-meta">
             <span class="news-date">${new Date(_new.date).toLocaleString() || ""}</span>
-            ${_new.url ? `<a href="${_new.url}" class="news-source-link" target="_blank">Source</a>` : ""}
+            ${_new.url ? `<a href="${_new.url}" class="news-source-link" target="_blank" title="Source / Link">Click Me!</a>` : ""}
         </div>
     </div>
     ${_new.icon ? `<div class="news-icon-wrapper"><img class="news-icon" src="${_new.icon}" alt=""></div>` : ""}
