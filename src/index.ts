@@ -92,6 +92,10 @@ function renderNews(news: Post[], viewedNews: string[]) {
             newElement.classList.toggle("viewed", true);
         });
 
+        newElement.querySelector(".news-source-link")?.addEventListener("click", (e) => {
+            window.parent.postMessage({ type: "open-link", url: (e.target as HTMLAnchorElement).href }, "*");
+        });
+
         list.appendChild(newElement);
     });
 }
