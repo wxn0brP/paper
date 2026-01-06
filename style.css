@@ -1,28 +1,28 @@
 #small-paper-iframe {
     position: fixed;
-    right: 10px;
-    bottom: 60px;
-    width: 300px;
-    height: 600px;
+    right: var(--small-paper-iframe-right, 10px);
+    bottom: var(--small-paper-iframe-bottom, 60px);
+    width: var(--small-paper-iframe-width, 300px);
+    height: var(--small-paper-iframe-height, 600px);
     border: none;
-    border-radius: 8px;
-    z-index: 999;
+    border-radius: var(--small-paper-iframe-radius, 8px);
+    z-index: var(--small-paper-iframe-z, 999);
 }
 
 #small-paper-button {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: var(--back, #2c2c2c);
-    color: var(--txt, #ededed);
+    right: var(--small-paper-button-right, 10px);
+    bottom: var(--small-paper-button-bottom, 10px);
+    width: var(--small-paper-button-size, 2rem);
+    height: var(--small-paper-button-size, 2rem);
+    border-radius: var(--small-paper-button-radius, 50%);
+    background-color: var(--small-paper-button-bg, #2c2c2c);
+    color: var(--small-paper-button-txt, #ededed);
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--small-paper-button-shadow, 0 0 10px rgba(0, 0, 0, 0.2));
     cursor: pointer;
-    z-index: 1000;
+    z-index: var(--small-paper-button-z, 1000);
 }
