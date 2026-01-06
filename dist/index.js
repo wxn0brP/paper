@@ -1,6 +1,6 @@
-async function w(){try{let s=+await(await fetch("https://wxn0brp.github.io/paper/posts.txt")).text();return localStorage.setItem("newsCount",s.toString()),s}catch{if(localStorage.getItem("newsCount"))return+localStorage.getItem("newsCount")||0;return 0}}async function u(t){let e;if(localStorage.getItem(`post-${t}`))e=localStorage.getItem(`post-${t}`)||"";else e=await(await fetch(`https://wxn0brp.github.io/paper/post/${t}.txt`)).text(),localStorage.setItem(`post-${t}`,e);let s=e.split(`
-`),n=s.shift(),o=s.shift(),c=s.shift(),r=s.shift(),l=s.join(`
-`);return{id:t,date:o,title:n,url:c,icon:r,content:l}}function a(){let t=localStorage.getItem("viewedNews");if(!t)return[];return t.split(",")}function d(...t){let s=[...a(),...t],n=new Set(s);i.viewedNews=[...n],localStorage.setItem("viewedNews",[...n].join(","))}function m(t,e){let s=document.querySelector("#list");if(!s)return;s.innerHTML="",t.forEach((n)=>{let o=document.createElement("article");o.className="news-card",o.classList.toggle("viewed",e.includes(n.id)),o.innerHTML=`
+async function w(){try{let s=+await(await fetch("https://wxn0brp.github.io/paper/posts.txt")).text();return localStorage.setItem("newsCount",s.toString()),s}catch{if(localStorage.getItem("newsCount"))return+localStorage.getItem("newsCount")||0;return 0}}async function u(e){let t;if(localStorage.getItem(`post-${e}`))t=localStorage.getItem(`post-${e}`)||"";else t=await(await fetch(`https://wxn0brp.github.io/paper/post/${e}.txt`)).text(),localStorage.setItem(`post-${e}`,t);let s=t.split(`
+`),n=s.shift(),o=s.shift(),a=s.shift(),r=s.shift(),l=s.join(`
+`);return{id:e,date:o,title:n,url:a,icon:r,content:l}}function c(){let e=localStorage.getItem("viewedNews");if(!e)return[];return e.split(",")}function d(...e){let s=[...c(),...e],n=new Set(s);i.viewedNews=[...n],localStorage.setItem("viewedNews",[...n].join(","))}function m(e,t){let s=document.querySelector("#list");if(!s)return;s.innerHTML="",e.forEach((n)=>{let o=document.createElement("article");o.className="news-card",o.classList.toggle("viewed",t.includes(n.id)),o.innerHTML=`
 <div class="news-top-section">
     <div class="news-info">
         <h2 class="news-title">${n.title}</h2>
@@ -19,7 +19,7 @@ async function w(){try{let s=+await(await fetch("https://wxn0brp.github.io/paper
         </div>
     </details>
 </div>
-        `,o.addEventListener("click",()=>{d(n.id),o.classList.toggle("viewed",!0)}),s.appendChild(o)})}async function g(){let t=[];for(let e=i.newsCount;e>=1;e--)t.push(await u(e.toString()));return t}var i={newsCount:0,news:[],viewedNews:[]};async function f(){i.newsCount=await w(),i.viewedNews=a(),i.news=await g(),m(i.news,i.viewedNews)}f();var p=new URLSearchParams(window.location.search);for(let[t,e]of p.entries())document.documentElement.style.setProperty("--"+t,e);
+        `,o.addEventListener("click",()=>{d(n.id),o.classList.toggle("viewed",!0)}),o.querySelector(".news-source-link")?.addEventListener("click",(a)=>{window.parent.postMessage({type:"open-link",url:a.target.href},"*")}),s.appendChild(o)})}async function g(){let e=[];for(let t=i.newsCount;t>=1;t--)e.push(await u(t.toString()));return e}var i={newsCount:0,news:[],viewedNews:[]};async function p(){i.newsCount=await w(),i.viewedNews=c(),i.news=await g(),m(i.news,i.viewedNews)}p();var f=new URLSearchParams(window.location.search);for(let[e,t]of f.entries())document.documentElement.style.setProperty("--"+e,t);
 
-//# debugId=6A79A219DCDA812264756E2164756E21
+//# debugId=D02AD61B5C7AC61864756E2164756E21
 //# sourceMappingURL=index.js.map
