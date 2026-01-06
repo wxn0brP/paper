@@ -68,24 +68,24 @@ function renderNews(news: Post[], viewedNews: string[]) {
         newElement.className = "news-card";
         newElement.classList.toggle("viewed", viewedNews.includes(_new.id));
         newElement.innerHTML = `
-            <div class="news-top-section">
-                <div class="news-info">
-                    <h2 class="news-title">${_new.title}</h2>
-                    <div class="news-meta">
-                        <span class="news-date">${new Date(_new.date).toLocaleString() || ""}</span>
-                        ${_new.url ? `<a href="${_new.url}" class="news-source-link" target="_blank">Source</a>` : ""}
-                    </div>
-                </div>
-                ${_new.icon ? `<div class="news-icon-wrapper"><img class="news-icon" src="${_new.icon}" alt=""></div>` : ""}
-            </div>
-            <div class="news-content-section">
-                <details class="news-details">
-                    <summary class="news-summary">Read more</summary>
-                    <div class="news-text">
-                        <p>${_new.content}</p>
-                    </div>
-                </details>
-            </div>
+<div class="news-top-section">
+    <div class="news-info">
+        <h2 class="news-title">${_new.title}</h2>
+        <div class="news-meta">
+            <span class="news-date">${new Date(_new.date).toLocaleString() || ""}</span>
+            ${_new.url ? `<a href="${_new.url}" class="news-source-link" target="_blank">Source</a>` : ""}
+        </div>
+    </div>
+    ${_new.icon ? `<div class="news-icon-wrapper"><img class="news-icon" src="${_new.icon}" alt=""></div>` : ""}
+</div>
+<div class="news-content-section">
+    <details class="news-details">
+        <summary class="news-summary">Read more</summary>
+        <div class="news-text">
+            <p>${_new.content}</p>
+        </div>
+    </details>
+</div>
         `;
         newElement.addEventListener("click", () => {
             markAsView(_new.id);
@@ -115,30 +115,11 @@ async function init() {
     store.news = await fetchNews();
 
     renderNews(store.news, store.viewedNews);
-    console.log(store);
 }
 
-const initPromise = init();
-(window as any).store = store;
+init();
 
-window.addEventListener("message", async (e) => {
-    if (e.data.type === "get-count") {
-        e.source.postMessage({ type: "count", count: store.newsCount - store.viewedNews.length });
-    }
-    if (e.data.type === "mark-as-viewed") {
-        markAsView(...e.data.ids);
-        e.source.postMessage({ type: "viewed-news", news: store.viewedNews });
-    }
-    if (e.data.type === "ready") {
-        await initPromise;
-        e.source.postMessage({ type: "ready" });
-    }
-    if (e.data.type === "set-css-var") {
-        const name = e.data.name;
-        const value = e.data.value;
-        document.documentElement.style.setProperty("--" + name, value);
-    }
-    if (e.data.type === "get-store") {
-        e.source.postMessage({ type: "store", store });
-    }
-});
+const searchParams = new URLSearchParams(window.location.search);
+for (const [key, value] of searchParams.entries()) {
+    document.documentElement.style.setProperty("--" + key, value);
+}
