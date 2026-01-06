@@ -1,8 +1,9 @@
 type Post = Awaited<ReturnType<typeof fetchNew>>;
+const masterURL = "https://wxn0brp.github.io/paper/";
 
 async function fetchNewsCount() {
     try {
-        const res = await fetch("/posts.txt");
+        const res = await fetch(masterURL + "posts.txt");
         const newsCount = await res.text();
         const count = +newsCount;
         localStorage.setItem("newsCount", count.toString());
@@ -21,7 +22,7 @@ async function fetchNew(id: string) {
     if (localStorage.getItem(`post-${id}`)) {
         post = localStorage.getItem(`post-${id}`) || "";
     } else {
-        const res = await fetch(`/post/${id}.txt`);
+        const res = await fetch(masterURL + `post/${id}.txt`);
         post = await res.text();
         localStorage.setItem(`post-${id}`, post);
     }
