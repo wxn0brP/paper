@@ -33,6 +33,7 @@ You can set the following settings by adding them to the URL as query parameters
 
 ## Popup Settings
 
+```css
 :root {
     --small-paper-iframe-right: 10px;
     --small-paper-iframe-bottom: 60px;
@@ -50,6 +51,7 @@ You can set the following settings by adding them to the URL as query parameters
     --small-paper-button-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     --small-paper-button-z: 1000;
 }
+```
 
 ## Features
 
