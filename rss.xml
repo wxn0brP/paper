@@ -7,14 +7,6 @@
         <atom:link href="https://wxn0brp.github.io/paper/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Title</title>
-            <link>Url</link>
-            <guid>https://wxn0brp.github.io/paper/post/0.txt</guid>
-            <pubDate>Invalid Date</pubDate>
-            <description><![CDATA[Content]]></description>
-        </item>
-    
-        <item>
             <title>Zhiva Framework</title>
             <link>https://github.com/wxn0brP/Zhiva</link>
             <guid>https://wxn0brp.github.io/paper/post/2.txt</guid>
