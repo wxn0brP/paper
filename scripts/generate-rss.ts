@@ -45,7 +45,7 @@ async function generateRss() {
             <link>${post.url || masterURL}</link>
             <guid>${masterURL}post/${post.id}.txt</guid>
             <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-            <description><![CDATA[${post.content}]]></description>
+            <content:encoded><![CDATA[${post.content}]]></content:encoded>
         </item>
     `).join("");
 
@@ -55,6 +55,7 @@ async function generateRss() {
         <title>wxn0brP News Paper</title>
         <link>${masterURL}</link>
         <description>Latest news from wxn0brP</description>
+        <language>en</language>
         <atom:link href="${masterURL}rss.xml" rel="self" type="application/rss+xml" />
         ${rssItems}
     </channel>
