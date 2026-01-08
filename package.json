@@ -15,6 +15,7 @@
 		"build": "bun build src/index.ts src/load.ts --minify --sourcemap --outdir dist"
 	},
 	"devDependencies": {
+		"@types/bun": "*",
 		"typescript": "*"
 	}
 }
