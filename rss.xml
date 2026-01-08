@@ -4,6 +4,7 @@
         <title>wxn0brP News Paper</title>
         <link>https://wxn0brp.github.io/paper/</link>
         <description>Latest news from wxn0brP</description>
+        <language>en</language>
         <atom:link href="https://wxn0brp.github.io/paper/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
@@ -11,8 +12,8 @@
             <link>https://github.com/wxn0brP/Zhiva</link>
             <guid>https://wxn0brp.github.io/paper/post/2.txt</guid>
             <pubDate>Thu, 08 Jan 2026 12:43:33 GMT</pubDate>
-            <description><![CDATA[Experimental framework for desktop apps built with web technologies.
-]]></description>
+            <content:encoded><![CDATA[Experimental framework for desktop apps built with web technologies.
+]]></content:encoded>
         </item>
     
         <item>
@@ -20,7 +21,7 @@
             <link>https://wxn0.xyz</link>
             <guid>https://wxn0brp.github.io/paper/post/1.txt</guid>
             <pubDate>Tue, 06 Jan 2026 16:00:00 GMT</pubDate>
-            <description><![CDATA[Welcome to the new page. This is the first post introducing the site.]]></description>
+            <content:encoded><![CDATA[Welcome to the new page. This is the first post introducing the site.]]></content:encoded>
         </item>
     
     </channel>
