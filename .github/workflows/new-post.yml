@@ -1,0 +1,49 @@
+name: New Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Post Title'
+        required: true
+      url:
+        description: 'Post URL'
+        required: false
+      icon:
+        description: 'Post Icon URL'
+        required: false
+      content:
+        description: 'Post Content'
+        required: true
+
+jobs:
+  create_post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create new post
+        id: create_post
+        run: |
+          count=$(cat public/posts.txt)
+          new_count=$((count + 1))
+          echo "new_count=$new_count" >> $GITHUB_OUTPUT
+          echo $new_count > public/posts.txt
+          
+          post_date=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          
+          post_content="${{ github.event.inputs.title }}
+          $post_date
+          ${{ github.event.inputs.url }}
+          ${{ github.event.inputs.icon }}
+          ${{ github.event.inputs.content }}"
+          
+          echo "$post_content" > public/post/$new_count.txt
+          
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: add post ${{ steps.create_post.outputs.new_count }}"
+          file_pattern: public/posts.txt public/post/
