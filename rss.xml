@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>wxn0brP News Paper</title>
+        <link>https://wxn0brp.github.io/paper/</link>
+        <description>Latest news from wxn0brP</description>
+        <atom:link href="https://wxn0brp.github.io/paper/rss.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Title</title>
+            <link>Url</link>
+            <guid>https://wxn0brp.github.io/paper/post/0.txt</guid>
+            <pubDate>Invalid Date</pubDate>
+            <description><![CDATA[Content]]></description>
+        </item>
+    
+        <item>
+            <title>Zhiva Framework</title>
+            <link>https://github.com/wxn0brP/Zhiva</link>
+            <guid>https://wxn0brp.github.io/paper/post/2.txt</guid>
+            <pubDate>Thu, 08 Jan 2026 12:43:33 GMT</pubDate>
+            <description><![CDATA[Experimental framework for desktop apps built with web technologies.
+]]></description>
+        </item>
+    
+        <item>
+            <title>New Page</title>
+            <link>https://wxn0.xyz</link>
+            <guid>https://wxn0brp.github.io/paper/post/1.txt</guid>
+            <pubDate>Tue, 06 Jan 2026 16:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to the new page. This is the first post introducing the site.]]></description>
+        </item>
+    
+    </channel>
+</rss>
