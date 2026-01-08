@@ -1,0 +1,5 @@
+Zhiva Framework
+2026-01-08T12:43:33Z
+https://github.com/wxn0brP/Zhiva
+https://raw.githubusercontent.com/wxn0brP/Zhiva-base-lib/refs/heads/master/assets/zhiva.ico
+Experimental framework for desktop apps built with web technologies.
