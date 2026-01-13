@@ -47,4 +47,3 @@ jobs:
         with:
           commit_message: "chore: add post ${{ steps.create_post.outputs.new_count }}"
           file_pattern: public/posts.txt public/post/
-          commit_options: '--no-skip-ci'
