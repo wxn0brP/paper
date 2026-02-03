@@ -43,7 +43,7 @@ jobs:
           echo "$post_content" > public/post/$new_count.txt
           
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: add post ${{ steps.create_post.outputs.new_count }}"
           file_pattern: public/posts.txt public/post/
